@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Taco Cloud</title>
+</head>
+<body>
+        <h1>Taca Desgin</h1>
+        <div style="float: left">
+            <img style="width: 500px; height: 500px" th:src="@{taco.jpeg}" alt="">
+        </div>
+        <div>
+            <form th:object="${design}" method="post">
+            <div class="warp" style="float: left;margin-left: 100px">
+                <h3>Desginate your wrap:</h3>
+                <div th:each="item : ${wrap}">
+                    <input type="checkbox" name="ingredients" th:value="${item.id}">
+                    <span th:text="${item.name}"></span>
+                </div>
+            </div>
+            <div class="protein" style="float: left;margin-left: 100px">
+                <h3>Pick your protein:</h3>
+                <div th:each="item : ${protein}">
+                    <input type="checkbox" name="ingredients" th:value="${item.id}">
+                    <span th:text="${item.name}"></span>
+                </div>
+            </div>
+            <div class="cheese" style="float: left;margin-left: 100px">
+                <h3>Choose your cheese:</h3>
+                <div th:each="item : ${cheese}">
+                    <input type="checkbox" name="ingredients" th:value="${item.id}">
+                    <span th:text="${item.name}"></span>
+                </div>
+            </div>
+            <div class="veggies" style="float: left;margin-left: 100px">
+                <h3>Determine your veggies:</h3>
+                <div th:each="item : ${veggies}">
+                    <input type="checkbox" name="ingredients" th:value="${item.id}">
+                    <span th:text="${item.name}"></span>
+                </div>
+            </div>
+            <div class="warp" style="float: left;margin-left: 100px">
+                <h3>Select your sauce:</h3>
+                <div th:each="item : ${sauce}">
+                    <input type="checkbox" name="ingredients" th:value="${item.id}">
+                    <span th:text="${item.name}"></span>
+                </div>
+            </div>
+            <div style="float:left;width: 300px;height: 100px"></div>
+            <div class="creation_name" style="float:right;width: 300px;height: 100px;margin-right: 620px">
+                <h3>Name your taco creation:</h3>
+                    <input name="name" type="input">
+                <div style="margin-top: 20px">
+                    <input type="submit" value="Submit your taco">
+                </div>
+            </div>
+            </form>
+            </div>
+
+        </div>
+
+</body>
+</html>
